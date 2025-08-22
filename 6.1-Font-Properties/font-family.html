@@ -1,49 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Font Family</title>
+    <style>
+      html {
+        font-size: 2vw;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>Font Family</title>
-  <style>
-    #helvetica {
-      font-family: Helvetica, sans-serif;
-    }
+      body {
+        font-size: 1rem;
+      }
 
-    #arial {
-      font-family: Arial, sans-serif;
-    }
+      #helvetica {
+        font-family: Helvetica, sans-serif;
+      }
 
-    #serif {
-      font-family: serif;
-    }
+      #arial {
+        font-family: Arial, sans-serif;
+      }
 
-    #sans-serif {
-      font-family: sans-serif;
-    }
+      #serif {
+        font-family: serif;
+      }
 
-    #cursive {
-      font-family: cursive;
-    }
+      #sans-serif {
+        font-family: sans-serif;
+      }
 
-    #monospace {
-      font-family: monospace;
-    }
+      #cursive {
+        font-family: cursive;
+      }
 
-    #fantasy {
-      font-family: fantasy;
-    }
-  </style>
-</head>
+      #monospace {
+        font-family: monospace;
+      }
 
-<body>
-  <p id="helvetica">Helvetica</p>
-  <p id="arial">Arial</p>
-  <p id="serif">Serif</p>
-  <p id="sans-serif">Sans Serif</p>
-  <p id="cursive">Cursive</p>
-  <p id="monospace">Monospace</p>
-  <p id="fantasy">Fantasy</p>
+      #fantasy {
+        font-family: fantasy;
+      }
 
-</body>
+      #customfont1 {
+        font-family: "Edu NSW ACT Cursive", cursive;
+      }
+      #customfont2 {
+        font-family: "Playwrite MX Guides", cursive;
+      }
+    </style>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+MX+Guides&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <h2 id="customfont1">Fonts</h2>
+    <p id="helvetica">Helvetica</p>
+    <p id="arial">Arial</p>
+    <p id="serif">Serif</p>
+    <p id="sans-serif">Sans Serif</p>
+    <p id="cursive">Cursive</p>
+    <p id="monospace">Monospace</p>
+    <p id="fantasy">Fantasy</p>
+    <p id="customfont2">
+      You can also use custom fontfaces from sites like
+      <a href="https://fonts.google.com/?lang=en_Latn">Google Fonts</a>
+    </p>
+  </body>
 </html>
