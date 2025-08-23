@@ -1,0 +1,26 @@
+body {
+  background-color: #37353e;
+  color: #d3dad9;
+  font-family: "Nata Sans", sans-serif;
+}
+
+#post {
+  margin-top: 100px;
+  width: 50%;
+  margin-left: 25%;
+  text-align: center;
+}
+
+#post img {
+  border: 5px solid #d3dad9;
+  width: 100%;
+}
+
+#post h1 {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+#post p{
+    font-size: larger;
+}
