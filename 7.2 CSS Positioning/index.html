@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Positioning Exercise</title>
+    <style>
+      /* Write your code here */
+
+      .flag {
+        background-color: black;
+        width: 500px;
+        height: 300px;
+        margin-top: 50px;
+        margin-left: 50px;
+        position: relative;
+      }
+      .color {
+        width: 500px;
+        height: 100px;
+      }
+      #orange {
+        background-color: orange;
+      }
+      #white {
+        background-color: white;
+      }
+      #green {
+        background-color: green;
+      }
+      #circle {
+        position: absolute;
+        background-color: blue;
+        width: 100px;
+        height: 100px;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        border-radius: 50%;
+      }
+      #inner-circle {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        background-color: white;
+        border-radius: 50%;
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="flag">
+      <div id="circle">
+        <div id="inner-circle"></div>
+      </div>
+      <div class="color" id="orange"></div>
+      <div class="color" id="white"></div>
+      <div class="color" id="green"></div>
+    </div>
+  </body>
+</html>
