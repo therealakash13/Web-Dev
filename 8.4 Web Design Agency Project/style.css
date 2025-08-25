@@ -50,12 +50,19 @@ footer {
   .card{
     display: block;
     width: 100%;
-    text-align: center;
     margin-bottom: 30px;
   }
   .card img{
     object-fit: cover;
     width: 100%;
-    margin-bottom: 10px;
+  }
+
+  .logo{
+    width: 150px;
+  }
+
+  h1{
+    font-size: 4rem;
+    text-align: center;
   }
 }
