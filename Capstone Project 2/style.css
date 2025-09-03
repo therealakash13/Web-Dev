@@ -77,36 +77,45 @@ body {
   text-decoration-thickness: 2px;
 }
 
+.section {
+  margin: 6rem auto 0 auto;
+}
+
 #hero {
   width: 90%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 6rem auto 6rem auto;
 }
 
-.left-hero{
+.left-hero {
+  align-self: start;
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: space-between;
-  gap: 7.2rem;
+  gap: 3rem;
 }
-
-.right-hero > div >img{
-  height: 30rem;
+.right-hero {
+  align-self: flex-start;
+}
+.right-hero > div > img {
+  height: 24rem;
+  width: 24rem;
   background-color: #a6a6a6;
   border-radius: 10px;
+  object-fit: cover;
+  object-position: 0px 1%;
 }
 
-.right-hero > div{
+.right-hero > div {
   background-color: #fff;
   border-radius: 10px;
   /* padding:20px 20px 0 20px */
 }
 
-#lhbtn{
-  padding: 1rem;
+#lhbtn {
+  padding: 10px 20px;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -117,12 +126,12 @@ body {
   font-size: large;
   color: #5ce1e6;
 }
-svg{
+svg {
   background-color: #2197bd;
   margin-right: 10px;
 }
 
-h1{
+h1 {
   text-align: left;
   font-size: 80px;
   margin: 0;
@@ -130,40 +139,178 @@ h1{
   margin-top: 2rem;
 }
 
-#icons{
+#icons {
   display: flex;
   align-items: center;
-  justify-content: space-evenly ;
+  justify-content: space-evenly;
   background-color: #fff;
   padding: 1rem;
   border-radius: 10px;
-  
 }
 
-.icon{
-  height: 45px;  
-  border-radius: 50%;  
+.icon {
+  height: 45px;
+  border-radius: 50%;
 }
 
-.icon:hover{
+.icon:hover {
   scale: 105%;
   cursor: pointer;
 }
 
-.btn{
+.btn {
   background-color: #1d1d1b;
-  color:#d9d9d9;
-  padding: 1rem 2rem;
-  border-radius: 10px; 
+  color: #d9d9d9;
+  padding: 15px 30px;
+  border-radius: 10px;
   margin-top: 25px;
-  /* text-transform: uppercase; */
-  font-size: large;
+  font-size: x-large;
   border: none;
   font-weight: 600;
   text-align: center;
   cursor: pointer;
 }
 
-.btn:hover{
-  scale: 105%;
+h2 {
+  margin: 0;
+  padding: 0;
+  background-color: #2197bd;
+  color: #d9d9d9;
+  padding: 30px;
+  text-align: start;
+  font-weight: 500;
+  border-radius: 10px;
+  font-size: 2rem;
+}
+
+#resume > div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  height: 50rem;
+}
+
+#table-grid {
+  width: 80%;
+  height: full;  
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  border-radius: 10px;  
+  /* border: 1px solid #2197bd;   */
+}
+
+#topic > ul > li{
+  /* background-color: #2197bd; */
+  color: #1d1d1b;
+  list-style: none;
+  font-size: 1.5rem;
+  padding: 20px;  
+  border-radius: 10px 0 0 10px;
+}
+
+#topic > ul > li.active{
+  background-color: #2197bd;
+  text-align: end;
+  font-weight: 600 ;
+  color: #5ce1e6;  
+}
+
+
+.sub-topic > ul > li {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  align-items: baseline;  
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+
+}
+.sub-topic > ul > li > span{
+  text-align: end;
+  padding-right: 10px;
+  font-size: 1.3rem;
+  color: #a6a6a6;
+  background-color: #fff;
+    border-right: 2px solid #2197bd;
+}
+
+.sub-topic > ul > li > p{
+  text-align: start;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #1d1d1b;
+  background-color: #fff;
+  margin-left: 10px;
+}
+
+#table-grid > div.deactive{  
+  display: none;
+}
+
+#topic-2{
+  background-color: #fff;
+  height: full;
+}
+
+#topic-3 {
+    height: full;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background-color: #fff;
+}
+#topic-3 > h3  {
+  background-color: #fff;
+  color: #2197bd;
+  font-size: xx-large;
+  margin: 2rem;
+}
+#topic-3 span{
+  background-color: #fff;
+  color: #a6a6a6;
+  font-weight: 400;
+  margin-left: 20px;
+  justify-content: baseline;
+  font-size: smaller;
+}
+
+#topic-3 p {
+  background-color: #fff;
+  padding: 0.5rem;
+  margin-left: 1rem;
+  /* border-left: 2px solid #2197bd; */
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: #a6a6a6;
+}
+
+#topic-3 > ul{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  list-style:  none;
+  margin: 2rem 0 0 2rem;
+  list-style-position: outside;
+  border-left: 2px solid  #2197bd;  
+  background-color: #fff;
+}
+
+#topic-3 > ul > li:first-child{
+  margin-top: 0px;
+}
+
+#topic-3 > ul > li{
+  background-color: #fff;
+  color: #1d1d1b;
+  font-weight: 600;
+  margin: 20px 10px 0 1rem; 
+}
+
+#topic-4 {
+  height: full;
+  margin: 2rem 0 ;
 }
