@@ -4,65 +4,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Akash</title>
-    <link rel="stylesheet" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <!-- navbar -->
-    <div class="navbar">
-      <div id="left-nav">
-        <img src="./assets/images/me.png" alt="my picture" />
-        <span>Akash</span>
-      </div>
-      <div id="right-nav">
+    <div id="main-container">
+      <!-- navbar -->
+      <nav>
         <ul>
-          <li class="nav-link active">Resume</li>
-          <li class="nav-link">My Work</li>
-          <li class="nav-link">About Me</li>
-          <li class="nav-link">Contact Me</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- hero-section -->
-    <div id="hero" class="section">
-      <div class="left-hero">
-        <div>
-          <button id="lhbtn">
-            <svg
-              width="30px"
-              height="30px"
-              viewBox="0 0 16 16"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
+          <li>
+            <img src="./assets/images/me.png" alt="my picture" /><span
+              >Akash</span
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></g>
-              <g id="SVGRepo_iconCarrier">
-                <path fill="#5ce1e6" d="M8 3a5 5 0 100 10A5 5 0 008 3z"></path>
-              </g>
-            </svg>
-            Available to Work
-          </button>
-          <h1>
-            Hi, I am a<br />Fullstack<br />
-            Web Developer
-          </h1>
+          </li>
+          <li class="active">Resume</li>
+          <li class="">My Work</li>
+          <li class="">About Me</li>
+          <li class="">Contact Me</li>
+        </ul>
+      </nav>
+
+      <!-- hero-section -->
+      <div id="hero" class="section">
+        <div class="left-hero">
+          <div>
+            <button id="lhbtn">
+              <svg
+                width="30px"
+                height="30px"
+                viewBox="0 0 16 16"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    fill="#5ce1e6"
+                    d="M8 3a5 5 0 100 10A5 5 0 008 3z"
+                  ></path>
+                </g>
+              </svg>
+              <span>Available to Work</span>
+            </button>
+            <h1>
+              Hi, I am a<br />Fullstack<br />
+              Web Developer
+            </h1>
+          </div>
+          <button class="btn">Contact Me</button>
         </div>
-        <button class="btn">Contact Me</button>
-      </div>
-      <div class="right-hero">
-        <div>
-          <img src="./assets/images/me.png" alt="my picture" />
+        <div class="right-hero">
+          <img id="hero-image" src="./assets/images/me.png" alt="my picture" />
+
           <div id="icons">
             <img
               class="icon"
@@ -82,11 +85,9 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- resume-section: -->
-    <div class="section" id="resume">
-      <div>
+      <!-- resume-section: -->
+      <div class="section" id="resume">
         <h2>
           My moto is to code and build innovative web applications and easy to
           use softwares. I am eager to apply academic knowledge , self taught
@@ -96,42 +97,60 @@
 
         <div id="table-grid">
           <div id="topic">
-            <ul><li class="">Skills</li>
-                <li class="">Education</li>
-                <li class="">Work Experience</li>
-                <li class="active">Cerfications</li>
+            <ul>
+              <li class="active">Skills</li>
+              <li class="">Education</li>
+              <li class="">Work Experience</li>
+              <li class="">Cerfications</li>
             </ul>
           </div>
 
           <div id="topic-1" class="sub-topic deactive">
-            <ul>  <li>  <span>Languages</span>
-                        <p>HTML, CSS, JavaScript, TypeScript, C, C++, EJS</p>
-                  </li>
-                  <li>  <span>Frameworks/Libraries</span>
-                        <p>React, Redux, Angular, PrimeNG, Bootstrap, Tailwind CSS</p>
-                  </li>
-                  <li>  <span>Backend Technologies</span>
-                        <p>Node, Express, Prisma, PostgreSQL, MongoDB, Firebase, Mongoose, Stripe, Cloudinary, REST APIs</p>
-                  </li>
-                  <li>  <span>Packages/Modules</span>
-                        <p>pg, jwt, bcrypt, cookie-parser, dotenv, multer, cors, config, morgan, dayjs, zod, sonner, toastify, ngx-toaster, nodemon, axios</p>
-                  </li>
-                  <li>  <span>Tools</span>
-                        <p>Git, Git Bash, npm, Postman, pgAdmin</p>
-                  </li>
+            <ul>
+              <li>
+                <span>Languages</span>
+                <p>HTML, CSS, JavaScript, TypeScript, C, C++, EJS</p>
+              </li>
+              <li>
+                <span>Frameworks/Libraries</span>
+                <p>React, Redux, Angular, PrimeNG, Bootstrap, Tailwind CSS</p>
+              </li>
+              <li>
+                <span>Backend Technologies</span>
+                <p>
+                  Node, Express, Prisma, PostgreSQL, MongoDB, Firebase,
+                  Mongoose, Stripe, Cloudinary, REST APIs
+                </p>
+              </li>
+              <li>
+                <span>Packages/Modules</span>
+                <p>
+                  pg, jwt, bcrypt, cookie-parser, dotenv, multer, cors, config,
+                  morgan, dayjs, zod, sonner, toastify, ngx-toaster, nodemon,
+                  axios
+                </p>
+              </li>
+              <li>
+                <span>Tools</span>
+                <p>Git, Git Bash, npm, Postman, pgAdmin</p>
+              </li>
             </ul>
           </div>
 
           <div id="topic-2" class="sub-topic deactive">
-            <ul>  <li>  <span>X</span>
-                        <p>Greenfields Public School</p>
-                  </li>
-                  <li>  <span>XII</span>
-                        <p>Greenfields Public School</p>
-                  </li>
-                  <li>  <span>Graduation</span>
-                        <p>Maharishi Dayanand University, Rohtak</p>
-                  </li>
+            <ul>
+              <li>
+                <span>X</span>
+                <p>Greenfields Public School</p>
+              </li>
+              <li>
+                <span>XII</span>
+                <p>Greenfields Public School</p>
+              </li>
+              <li>
+                <span>Graduation</span>
+                <p>Maharishi Dayanand University, Rohtak</p>
+              </li>
             </ul>
           </div>
 
@@ -139,32 +158,175 @@
             <h3>Arc Apparels<span>Operations Assistant</span></h3>
             <p>Delhi | 16th July 2025 - Present</p>
             <ul>
-              <li>Handled product labeling and order processing for e-commerce platforms including Amazon, Flipkart, and a Shopify-based online store.</li>
-              <li>Maintained high accuracy and efficiency in daily operations, ensuring timely order fulfillment.</li>
-              <li>Gained practical insight into Shopify’s e-commerce workflows, complementing technical experience in building web applications and order management systems.</li>
+              <li>
+                Handled product labeling and order processing for e-commerce
+                platforms including Amazon, Flipkart, and a Shopify-based online
+                store.
+              </li>
+              <li>
+                Maintained high accuracy and efficiency in daily operations,
+                ensuring timely order fulfillment.
+              </li>
+              <li>
+                Gained practical insight into Shopify’s e-commerce workflows,
+                complementing technical experience in building web applications
+                and order management systems.
+              </li>
             </ul>
           </div>
 
-          <div id="topic-4" class="sub-topic">
-            <ul>  <li>  <span>NetworkBulls</span>
-                        <p>Attended a One day Workshop from NetworkBulls. Learned about creating Network configuring CISCO Routers and worked with Packet Tracer and GNS</p>
-                  </li>
+          <div id="topic-4 " class="sub-topic">
+            <ul>
+              <li>
+                <span>NetworkBulls</span>
+                <p>
+                  Attended a One day Workshop from NetworkBulls. Learned about
+                  creating Network configuring CISCO Routers and worked with
+                  Packet Tracer and GNS
+                </p>
+              </li>
             </ul>
 
-            <ul>  <li>  <span>Online Courses</span>
-                        <p>Attended The Complete Full-Stack Web Development Bootcamp - Dr. Angela Yu [Udemy]</p>
-                  </li>
+            <ul>
+              <li>
+                <span>Online Courses</span>
+                <p>
+                  Attended The Complete Full-Stack Web Development Bootcamp -
+                  Dr. Angela Yu [Udemy]
+                </p>
+              </li>
             </ul>
 
-            <ul>  <li>  <span>Youtube</span>
-                        <p>Although its not official, I did study from various sources and playlists on Youtube.</p></li></ul>
+            <ul>
+              <li>
+                <span>Youtube</span>
+                <p>
+                  Although its not official, I did study from various sources
+                  and playlists on Youtube.
+                </p>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- work-section -->
-    <!-- about-me -->
-    <!-- contact-me -->
+      <!-- work-section -->
+      <div class="section" id="work">
+        <h2>My Work</h2>
+        <div id="work-grid">
+          <div>
+            <img src="./assets/images/niggaflix.png" alt="niggaflix website" />
+            <div class="modal disabled">
+              <img src="./assets/images/niggaflix.png" alt="niggaflix picture" />
+              <div>
+                <h3>Niggaflix</h3>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Eveniet, asperiores ducimus! Odit eum mollitia earum pariatur
+                  dolorem minus veniam? Totam necessitatibus consequuntur quos
+                  quidem id enim architecto perferendis magnam corrupti!
+                </p>
+                <span>Technologies Used:</span>
+                <button id="btn2">Live Link</button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img src="./assets/images/jobhub.png" alt="jobhub website" />
+            <div class="modal disabled">
+              <img src="./assets/images/jobhub.png" alt="jobhub picture" />
+              <div>
+                <h3>Jobhub</h3>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Eveniet, asperiores ducimus! Odit eum mollitia earum pariatur
+                  dolorem minus veniam? Totam necessitatibus consequuntur quos
+                  quidem id enim architecto perferendis magnam corrupti!
+                </p>
+                <span>Technologies Used:</span>
+                <button id="btn2">Live Link</button>
+              </div>
+            </div>
+          </div>
+          <div><img src="./assets/images/foodi.png" alt="foodi website" />
+            <div class="modal disabled">
+              <img src="./assets/images/foodi.png" alt="jobhub picture" />
+              <div>
+                <h3>Foodi</h3>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Eveniet, asperiores ducimus! Odit eum mollitia earum pariatur
+                  dolorem minus veniam? Totam necessitatibus consequuntur quos
+                  quidem id enim architecto perferendis magnam corrupti!
+                </p>
+                <span>Technologies Used:</span>
+                <button id="btn2">Live Link</button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img
+              src="./assets/images/spotify.png"
+              alt="spotify clone website"
+            />
+            <div class="modal disabled">
+              <img src="./assets/images/spotify.png" alt="niggaflix picture" />
+              <div>
+                <h3>Spotify Clone</h3>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Eveniet, asperiores ducimus! Odit eum mollitia earum pariatur
+                  dolorem minus veniam? Totam necessitatibus consequuntur quos
+                  quidem id enim architecto perferendis magnam corrupti!
+                </p>
+                <span>Technologies Used:</span>
+                <button id="btn2">Live Link</button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img src="./assets/images/weather.png" alt="weather website" />
+            <div class="modal disabled">
+              <img src="./assets/images/weather.png" alt="jobhub picture" />
+              <div>
+                <h3>Weather App</h3>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Eveniet, asperiores ducimus! Odit eum mollitia earum pariatur
+                  dolorem minus veniam? Totam necessitatibus consequuntur quos
+                  quidem id enim architecto perferendis magnam corrupti!
+                </p>
+                <span>Technologies Used:</span>
+                <button id="btn2">Live Link</button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img
+              src="./assets/images/ytclone.png"
+              alt="youtube clone website"
+            />
+            <div class="modal disabled">
+              <img src="./assets/images/ytclone.png" alt="jobhub picture" />
+              <div>
+                <h3>Youtube Clone</h3>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Eveniet, asperiores ducimus! Odit eum mollitia earum pariatur
+                  dolorem minus veniam? Totam necessitatibus consequuntur quos
+                  quidem id enim architecto perferendis magnam corrupti!
+                </p>
+                <span>Technologies Used:</span>
+                <button id="btn2">Live Link</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Complete the remaining modal -->
+      <!-- about-me -->
+      <!-- contact-me -->
+    </div>
   </body>
 </html>
