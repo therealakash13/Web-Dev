@@ -42,7 +42,7 @@ nav li {
   align-items: center;
   margin-right: 3rem;
   text-transform: uppercase;
-  font-size: large;
+  font-size: clamp(14px,1vw,50px);
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
 }
@@ -59,7 +59,7 @@ nav li:last-child {
 nav span {
   margin-left: 1rem;
   text-transform: uppercase;
-  font-size: x-large;
+  font-size: clamp(16px, 1.5vw, 60px);
   font-family: "Pacifico", cursive;
   color: #2197bd;
 }
@@ -190,7 +190,7 @@ svg {
   text-align: start;
   font-weight: 500;
   border-radius: 1rem;
-  font-size: clamp(20px,1.6vw,2rem);
+  font-size: clamp(20px, 1.6vw, 2rem);
 }
 
 #table-grid {
@@ -200,7 +200,7 @@ svg {
   margin-right: auto;
   display: grid;
   grid-template-columns: 1fr 6fr;
-  border-radius: 1rem; 
+  border-radius: 1rem;
 }
 
 #topic > ul {
@@ -316,10 +316,9 @@ svg {
   margin: 20px 10px 0 1rem;
 }
 
-
 #work > h2 {
   text-align: start;
-  font-size: clamp(45px,3vw,80px);
+  font-size: clamp(45px, 3vw, 80px);
   color: #1d1d1b;
   margin-bottom: 10rem;
 }
@@ -329,51 +328,47 @@ svg {
   margin: 3rem auto 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-  gap: 10px;
+  gap: 1rem;
   background-color: #fff;
-  padding: 2rem;
-  border-radius: 10px;
+  padding: 1.8rem;
+  border-radius: 1rem;
 }
 
 #work-grid > div {
   place-self: center;
-  width: 23rem;
-  height: 12rem;
-  border-radius: 10px;
 }
 
 #work-grid > div > img {
-  width: 23rem;
-  height: 12rem;
+  max-height: 10vw;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 1rem;
   cursor: pointer;
+  min-height: 167px;
 }
 
 #work-grid > div > img:hover {
-  transform: scale(1.5);
+  transform: scale(1.1);
   z-index: 1;
 }
 
-.modal{
+.modal {
   max-width: 70%;
   display: flex;
   position: absolute;
   inset: 1;
   z-index: 20;
   background-color: #2197bd;
-  padding: 0.7rem;  
+  padding: 0.7rem;
   border-radius: 1rem;
 }
 
-.modal img{
+.modal img {
   height: 18vh;
-  object-fit: cover; 
+  object-fit: cover;
   border-radius: 1rem;
 }
 
-.modal > div{
+.modal > div {
   display: flex;
   flex-direction: column;
   margin-left: 1rem;
@@ -382,7 +377,7 @@ svg {
   align-items: start;
 }
 
-.modal h3{
+.modal h3 {
   color: #5ce1e6;
   font-size: clamp(22px, 1.8vw, 40px);
 }
@@ -392,14 +387,14 @@ svg {
   font-size: clamp(15px, 1.5vw, 20px);
 }
 
-.modal span{
+.modal span {
   color: #d9d9d9;
   font-size: clamp(18px, 1.6vw, 24px);
-  margin-top: 10px; 
+  margin-top: 10px;
 }
 
-#btn2{
-   background-color: #1d1d1b;
+#btn2 {
+  background-color: #1d1d1b;
   color: #d9d9d9;
   padding: 0.2vw 0.4vw;
   border-radius: 10px;
@@ -414,106 +409,107 @@ svg {
   margin: 0 1rem 1rem 0;
 }
 
-.modal.disabled{
+.modal.disabled {
   display: none;
 }
 
 #about-me > h2 {
   text-align: start;
-  font-size: clamp(45px,3vw,80px);
+  font-size: clamp(45px, 3vw, 80px);
   color: #1d1d1b;
   margin-bottom: 10rem;
 }
 
-#right-img{
+#right-img {
   max-width: 16vw;
-  min-width: 232px;
+  min-width: 165px;
   background-color: #a6a6a6;
   border-radius: 1rem;
   object-fit: cover;
   object-position: 0px 1%;
   float: right;
+  min-height: 250px;
 }
 
-.sub-container{
-  width: 80%; 
-  display:flex;
+.sub-container {
+  width: 80%;
+  display: flex;
   flex-direction: row-reverse;
   place-self: center;
   gap: 1rem;
 }
 
-
-#info{
+#info {
   padding: 2rem;
   background-color: #fff;
   border-radius: 1rem;
   place-self: end;
 }
 
-#info > div{
+#info > div {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
 }
 
-#info ul{
+#info ul {
   display: flex;
   flex-direction: column;
   list-style: none;
   gap: 2rem;
-  font-size: clamp(16px,1vw,40px);
+  font-size: clamp(14px, 1vw, 40px);
   color: #1d1d1b;
 }
 
-#info > div > ul:first-child{
+#info > div > ul:first-child {
   text-transform: uppercase;
   font-weight: bold;
   align-items: end;
+  text-align: right;
   margin-right: 20px;
   color: #a6a6a6;
 }
 
-#info>div>ul:last-child{
+#info > div > ul:last-child {
   align-items: baseline;
 }
 
-#info>div>#icons{
+#info > div > #icons {
   justify-content: end;
   align-items: end;
-  gap: 10px; 
+  gap: 10px;
 }
 
 #contact-me > h2 {
   text-align: start;
-  font-size: clamp(45px,3vw,80px);
+  font-size: clamp(45px, 3vw, 80px);
   color: #1d1d1b;
   margin-bottom: 10rem;
 }
 
-#contact-me div.sub-container{
+#contact-me div.sub-container {
   flex-direction: row;
 }
 
-#contact-me img{
+#contact-me img {
   height: 18vw;
 }
 
-form{
+form {
   display: flex;
   flex-direction: column;
   width: 100%;
   justify-content: space-between;
   background-color: #fff;
   padding: 1.5rem;
-  border-radius: 1rem;  
+  border-radius: 1rem;
 }
 
-form span{
-  font-size: clamp(16px,1vw,60px) ;
+form span {
+  font-size: clamp(16px, 1vw, 60px);
   color: #a6a6a6;
 }
 
-form input{
+form input {
   width: 100%;
   padding: 0.4vw;
   border-radius: 1rem;
@@ -522,15 +518,15 @@ form input{
   background-color: #a6a6a6;
 }
 
-input[type="text"]:focus{  
+input[type="text"]:focus {
   outline: 0.2rem solid #2197bd;
 }
 
-#btn3{
+#btn3 {
   margin-top: 1rem;
   margin-bottom: 0;
   align-self: flex-end;
-    background-color: #1d1d1b;
+  background-color: #1d1d1b;
   color: #d9d9d9;
   padding: 0.5vw 0.7vw;
   border-radius: 10px;
@@ -541,5 +537,134 @@ input[type="text"]:focus{
   cursor: pointer;
 }
 
-
 /* make whole thing responsive */
+@media (max-width: 960px) {
+  nav li { 
+    margin-right: 2rem;
+    /* font-size: 1vw; */
+}
+
+  #table-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #topic > ul {
+    flex-direction: row;
+    text-align: center;
+  }
+  #topic > ul > li {
+    padding: 0.8rem;
+    font-size: medium;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #topic > ul > li.active {
+    border-radius: 10px 10px 0 0;
+    padding-bottom: 0.4rem;
+    font-size: 1.2rem;
+  }
+
+  .sub-topic {
+    border-radius: 0 0 1rem 1rem;
+  }
+  .sub-topic > ul > li > span {
+    font-size: 0.8rem;
+  }
+  .sub-topic > ul > li > p {
+    font-size: 0.8rem;
+  }
+  #topic-3 > h3 {
+    font-size: 1.5rem;
+  }
+  #topic-3 span {
+    font-size: 1.2rem;
+  }
+  #topic-3 p {
+    font-size: 1rem;
+    padding-left: 1rem;
+  }
+  #topic-3 ul {
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+  }
+  #topic-3 {
+    border-radius: 0 0 1rem 1rem;
+  }
+  #work-grid {
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+  }
+  .modal {
+    transform: translate(-20%, 0.1rem);
+  }
+  .modal img {
+    width: 20vw;
+  }
+  #btn2 {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 1580px) {
+  #work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #work-grid > div > img {
+    max-height: 16vw;
+    min-height: 10vw;
+  }
+}
+
+@media (max-width: 1060px) {
+  #work-grid {
+    grid-template-columns: 1fr;
+  }
+  #work-grid > div > img {
+    max-height: 30vw;
+  }
+  #info > div {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+  #info > div > #icons {
+    padding: 0;
+  }
+  .icon {
+    height: 4vw;
+    min-height: 28px;
+  }
+}
+
+@media (max-width: 1365px) {
+  #info > div > #icons {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width:1100px) {
+  #contact-me div.sub-container{
+    flex-direction: column;
+  }
+  #contact-me img{
+    height:34vw;
+  }
+  form{
+    margin-top: 2rem;
+  }
+  form span{
+    font-size: x-large;
+  }
+  form input{
+    padding: 0.5rem 1rem;
+    margin-bottom: 2rem;
+  }
+  #btn3{
+    padding: 1rem 3rem;
+    font-size: large;
+    margin-top: 0;
+  }
+}
