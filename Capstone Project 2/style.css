@@ -42,7 +42,7 @@ nav li {
   align-items: center;
   margin-right: 3rem;
   text-transform: uppercase;
-  font-size: clamp(14px,1vw,50px);
+  font-size: clamp(14px, 1vw, 50px);
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
 }
@@ -50,6 +50,10 @@ nav li {
 nav li:first-child {
   margin-right: auto;
   cursor: auto;
+}
+
+nav li[id="semi-last"] {
+  margin-right: 0;
 }
 
 nav li:last-child {
@@ -318,7 +322,7 @@ svg {
 
 #work > h2 {
   text-align: start;
-  font-size: clamp(45px, 3vw, 80px);
+  font-size: clamp(30px, 3vw, 80px);
   color: #1d1d1b;
   margin-bottom: 10rem;
 }
@@ -396,7 +400,7 @@ svg {
 #btn2 {
   background-color: #1d1d1b;
   color: #d9d9d9;
-  padding: 0.2vw 0.4vw;
+  padding: 1rem 2rem;
   border-radius: 10px;
   font-size: clamp(12px, 1vw, 40px);
   border: none;
@@ -415,7 +419,7 @@ svg {
 
 #about-me > h2 {
   text-align: start;
-  font-size: clamp(45px, 3vw, 80px);
+  font-size: clamp(30px, 3vw, 80px);
   color: #1d1d1b;
   margin-bottom: 10rem;
 }
@@ -481,7 +485,7 @@ svg {
 
 #contact-me > h2 {
   text-align: start;
-  font-size: clamp(45px, 3vw, 80px);
+  font-size: clamp(30px, 3vw, 80px);
   color: #1d1d1b;
   margin-bottom: 10rem;
 }
@@ -511,11 +515,12 @@ form span {
 
 form input {
   width: 100%;
-  padding: 0.4vw;
+  padding: 0.5rem 1rem;
   border-radius: 1rem;
   border-style: none;
   margin-top: 0.2rem;
   background-color: #a6a6a6;
+  margin-bottom: 0.8rem;
 }
 
 input[type="text"]:focus {
@@ -528,21 +533,24 @@ input[type="text"]:focus {
   align-self: flex-end;
   background-color: #1d1d1b;
   color: #d9d9d9;
-  padding: 0.5vw 0.7vw;
-  border-radius: 10px;
-  font-size: clamp(12px, 1vw, 40px);
+  padding: 0.6rem 1.5rem;
+  border-radius: 1rem;
+  font-size: large;
   border: none;
   font-weight: 600;
   text-align: center;
   cursor: pointer;
 }
+#close-btn {
+  display: none;
+}
 
 /* make whole thing responsive */
 @media (max-width: 960px) {
-  nav li { 
+  nav li {
     margin-right: 2rem;
     /* font-size: 1vw; */
-}
+  }
 
   #table-grid {
     grid-template-columns: 1fr;
@@ -615,6 +623,9 @@ input[type="text"]:focus {
     max-height: 16vw;
     min-height: 10vw;
   }
+  #btn2{
+    padding: 0.8rem 1.8rem;
+  }
 }
 
 @media (max-width: 1060px) {
@@ -645,26 +656,155 @@ input[type="text"]:focus {
   }
 }
 
-@media (max-width:1100px) {
-  #contact-me div.sub-container{
+@media (max-width: 1100px) {
+  #contact-me div.sub-container {
     flex-direction: column;
   }
-  #contact-me img{
-    height:34vw;
+  #contact-me img {
+    height: 34vw;
   }
-  form{
-    margin-top: 2rem;
+  form {
+    margin-top: 3rem;
   }
-  form span{
-    font-size: x-large;
+  form span {
+    font-size: clamp(15px, 1.8vw, 1rem);
   }
-  form input{
-    padding: 0.5rem 1rem;
-    margin-bottom: 2rem;
+  form input {
+    padding: 0.4rem 1rem;
+    margin-bottom: 1rem;
   }
-  #btn3{
-    padding: 1rem 3rem;
-    font-size: large;
+  #btn3 {
+    padding: 0.6rem 1.5rem;
+    font: size 14px;
     margin-top: 0;
   }
+  .modal h3{
+    font-size: 20px;
+  }
+  .modal p{
+    font-size: 16px;
+  }
+  .modal span{
+font-size: 16px;
+  }
+}
+
+@media (max-width: 790px) {
+  #close-btn {
+    display: block;
+  }
+  nav > ul > li.sidebar {
+    display: none;
+  }
+  #btn2{
+    padding: 0.6rem 1.4rem;
+  }
+
+  #lhbtn svg {
+    height: 20px;
+  }
+  #lhbtn span {
+    font-size: 14px;
+    padding-left: 0.2rem;
+  }
+  .left-hero h1 {
+    font-size: clamp(30px, 5vw, 52px);
+  }
+  #hero-image {
+    max-width: 20vw;
+    min-width: 150px;
+  }
+  .left-hero {
+    gap: 0.4rem;
+  }
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: clamp(10px, 3vw, 20px);
+  }
+  .icon {
+    height: 24px;
+  }
+
+  #resume h2 {
+    font-size: 16px;
+  }
+  #topic > ul > li {
+    font-size: 16px;
+  }
+  #topic > ul > li.active {
+    font-size: 17px;
+  }
+  .modal h3{
+    font-size: 20px;
+  }
+  .modal p{
+    font-size: 14px;
+  }
+  .modal span{
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 540px) {
+  #topic > ul > li {
+    font-size: 12px;
+  }
+  #topic > ul > li.active {
+    font-size: 14px;
+  }
+  .sub-topic > ul > li > span {
+    font-size: clamp(8px, 12px, 12px);
+  }
+  .sub-topic > ul > li > p {
+    font-size: clamp(8px, 11px, 10px);
+  }
+  #info {
+    position: relative;
+  }
+  #info > div > #icons {
+    flex-direction: row;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  #info > div{
+    grid-template-columns: 1fr 3fr 0fr;
+  }
+}
+
+@media (max-width: 740px) {
+  #right-img {
+    display: none;
+  }
+  #info > div {
+    grid-template-columns: 1fr 3.5fr 0.5fr;
+  }
+}
+
+@media (max-width:480px) {
+   #info > div{
+    grid-template-columns: 1fr 2fr 0fr;
+  }
+  #info > div > ul:first-child{
+    font-size: 10px;
+  }
+  #info > div > ul > li{
+    font-size: 10px;
+  }
+  #btn-3{
+    align-self: self-end;
+  }
+}
+
+@media (max-width:445px) {
+    #lhbtn span{
+      font-size: 10px;
+    }
+    #lhbtn > svg{
+      width: 12px;
+    }
+    #resume h2{
+      font-size: 12px;
+    }
+ 
 }
