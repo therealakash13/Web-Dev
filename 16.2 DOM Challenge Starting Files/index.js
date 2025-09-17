@@ -6,3 +6,7 @@ anc.style.color = "red";
 
 var btn = document.querySelector(".btn");
 btn.style.backgroundColor = "cyan";
+btn.style.cursor = "pointer";
+
+var heading = document.querySelector("h1");
+heading.classList.add("huge");
