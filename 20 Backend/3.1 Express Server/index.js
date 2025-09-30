@@ -4,5 +4,5 @@ const port = 3000;
 const hostname = "localhost";
 
 app.listen(port, () => {
-  console.log(`Server running at https://${hostname}:${port}/`);
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
