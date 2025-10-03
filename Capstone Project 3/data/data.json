@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Getting Started with Node.js",
+    "content": "Node.js is a JavaScript runtime built on Chrome's V8 engine. In this blog, we will explore how to set up a simple server.",
+    "time": "10/2/2025, 3:15:42 PM"
+  },
+  {
+    "id": 2,
+    "title": "Understanding Express Middleware",
+    "content": "Middleware functions in Express are functions that have access to the request and response objects. They are essential for tasks like authentication and logging.",
+    "time": "9/25/2025, 11:05:11 AM"
+  },
+  {
+    "id": 3,
+    "title": "Mastering CSS Grid",
+    "content": "CSS Grid is a powerful 2D layout system for the web. Learn how to create responsive layouts with just a few lines of code.",
+    "time": "8/17/2025, 8:45:22 PM"
+  },
+  {
+    "id": 4,
+    "title": "Introduction to EJS Templates",
+    "content": "EJS (Embedded JavaScript) is a templating language that lets you generate HTML markup with plain JavaScript. It integrates seamlessly with Express.",
+    "time": "6/9/2025, 6:32:08 AM"
+  },
+  {
+    "id": 5,
+    "title": "JavaScript ES6 Features",
+    "content": "ES6 introduced many powerful features such as arrow functions, template literals, destructuring, and modules. This article covers the most useful ones.",
+    "time": "4/22/2025, 9:12:55 PM"
+  }
+]

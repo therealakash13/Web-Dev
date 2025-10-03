@@ -1,0 +1,34 @@
+<%- include('partials/header.ejs') %>
+
+    <h2>Update you Blog here...</h2>
+
+    <% if (locals.data) { %>     
+        <form class="contact-form" action="/blogs/<%= data.id %>" method="POST">
+            <div class="form-group">
+                <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder="Title"
+                value="<%= data.title %>"
+                required
+                />
+            </div>
+        
+            <div class="form-group">
+                <textarea
+                id="content"
+                name="content"
+                rows="10"
+                placeholder="Content"
+                required
+                ><%= data.content %></textarea>
+            </div>
+            
+            <button type="submit" class="btn-primary">Update</button>
+        </form>
+    <% } else { %>
+        <h2>Error go back...</h2>
+    <% } %>
+        
+<%- include('partials/footer.ejs') %>

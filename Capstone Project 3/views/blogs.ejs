@@ -1,0 +1,19 @@
+<%- include('partials/header.ejs') %>
+<div class="cards-container">
+  <% if (locals.cards && locals.message) { %> <% cards.forEach(card => { %>
+  <div class="card">
+    <a href="/blogs/<%= card.id %>" class="card-link">
+      <h2 class="blog-title"><%= card.title %></h2>
+      <p class="blog-content"><%= card.content %></p>
+      <p class="blog-time"><%= card.time %></p>
+    </a>
+    <a href="/blogs/<%= card.id %>/delete"
+      ><span class="material-symbols-outlined"> delete_forever </span></a
+    >
+  </div>
+  <% }) %>
+</div>
+
+<% } else { %>
+<h2>No Blogs to show.</h2>
+<% } %> <%- include('partials/footer.ejs') %>
