@@ -11,8 +11,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", async (req, res) => {
   const response = await axios.get("https://secrets-api.appbrewery.com/random");
-  console.log(response.data);
-
   res.render("index.ejs", {
     secret: response.data.secret,
     user: response.data.username,
