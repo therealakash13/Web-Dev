@@ -18,30 +18,58 @@ const client = new pg.Client({
 
 client.connect();
 
+async function fetchVisited() {
+  try {
+    let countries = [];
+    const result = await client.query(
+      "SELECT country_code FROM visited_countries"
+    );
+    result.rows.forEach((c) => countries.push(c.country_code));
+    return countries;
+  } catch (err) {
+    console.error("Unable to fetch from db", err);
+  }
+}
+
 app.get("/", async (req, res) => {
-  const result = await client.query(
-    "SELECT country_code FROM visited_countries"
-  );
-  let countries = [];
-  result.rows.forEach((code) => countries.push(code.country_code));
-  res.render("index.ejs", { countries: countries, total: result.rowCount });
+  const countries = await fetchVisited();
+  res.render("index.ejs", { countries: countries, total: countries.length });
 });
 
 app.post("/add", async (req, res) => {
-  const country = req.body.country
-    .trim()
-    .split(" ")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-    .join(" ");
-  const result = await client.query(
-    `SELECT country_code FROM countries WHERE country_name = '${country}'`
-  );
-  if (result.rows.length !== 0) {
-    await client.query(
-      "INSERT INTO visited_countries(country_code) VALUES($1)",
-      [`${result.rows[0].country_code}`]
+  const country_name = req.body.country.trim().toLowerCase();
+  try {
+    const result = await client.query(
+      `SELECT country_code FROM countries WHERE (country_name) = '${country_name}'`
     );
-    res.redirect("/");
+
+    if (result.rows.length !== 0) {
+      try {
+        await client.query(
+          "INSERT INTO visited_countries(country_code) VALUES($1)",
+          [`${result.rows[0].country_code}`]
+        );
+        const countries = await fetchVisited();
+        res.render("index.ejs", {
+          countries: countries,
+          total: countries.length,
+        });
+      } catch (error) {
+        const countries = await fetchVisited();
+        res.render("index.ejs", {
+          countries: countries,
+          total: countries.length,
+          error: "Unable to add country. Already Added!",
+        });
+      }
+    }
+  } catch (error) {
+    const countries = await fetchVisited();
+    res.render("index.ejs", {
+      countries: countries,
+      total: countries.length,
+      error: "Unable to find country. Try Again!",
+    });
   }
 });
 
