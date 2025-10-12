@@ -20,11 +20,10 @@ client.connect();
 client
   .query(`SELECT * FROM flags`)
   .then((res) => {    
-    quiz = res.rows;
+    quiz = res.rows;    
+    client.end();
   })
   .catch((err) => console.log(err));
-  
-
   
   // Middleware
   app.use(bodyParser.urlencoded({ extended: true }));
