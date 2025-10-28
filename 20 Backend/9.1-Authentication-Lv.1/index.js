@@ -1,12 +1,16 @@
 import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
+import bcrypt from "bcrypt";
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 const port = 3000;
+const saltRounds = 10;
 
 const client = new pg.Pool({
-  connectionString: `postgresql://postgres:1234@localhost:5432/secrets`,
+  connectionString: process.env.DB_URI,
 });
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -27,18 +31,19 @@ app.get("/register", (req, res) => {
 app.post("/register", async (req, res) => {
   const { username, password } = req.body;
   try {
-    const existingUser = await client.query(
+    const response = await client.query(
       `SELECT email FROM users WHERE email = $1`,
       [username]
     );
 
-    if (existingUser.rowCount > 0) throw new Error("User already exists.");
+    if (response.rowCount > 0) throw new Error("User already exists.");
+
+    const hashPassword = await bcrypt.hash(password, saltRounds);
 
     await client.query(`INSERT INTO users (email,password) VALUES($1,$2)`, [
       username,
-      password,
+      hashPassword,
     ]);
-
     return res.render("secrets.ejs");
   } catch (error) {
     console.log({ error });
@@ -49,16 +54,18 @@ app.post("/register", async (req, res) => {
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
   try {
-    const user = await client.query(`SELECT * FROM users WHERE email = $1`, [
-      username,
-    ]);
+    const response = await client.query(
+      `SELECT * FROM users WHERE email = $1`,
+      [username]
+    );
 
-    if (user.rowCount == 0)
+    if (response.rowCount == 0)
       throw new Error("User not found with this username.");
-    
-    if (user.rows[0].password !== password)
-      throw new Error("Password is incorrect.");
 
+    const user = response.rows[0];
+    const isSame = await bcrypt.compare(password, user.password);
+
+    if (!isSame) throw new Error("Password is incorrect.");
     return res.render("secrets.ejs");
   } catch (error) {
     console.log({ error });
