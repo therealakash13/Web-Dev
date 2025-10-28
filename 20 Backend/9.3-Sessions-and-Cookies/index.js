@@ -5,6 +5,7 @@ import bcrypt from "bcrypt";
 import session from "express-session";
 import passport from "passport";
 import pkg from "passport-local";
+import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -89,6 +90,13 @@ app.post("/register", async (req, res) => {
   }
 });
 
+app.get("/logout", (req, res, next) => {
+  req.logout(function (err) {
+    if (err) throw err;
+    res.redirect("/login");
+  });
+});
+
 app.post(
   "/login",
   passport.authenticate("local", {
@@ -98,7 +106,7 @@ app.post(
 );
 
 passport.use(
-  new Strategy(async function verify(username, passport, cb) {
+  new Strategy("local", async function verify(username, passport, cb) {
     try {
       const result = await db.query("SELECT * FROM users WHERE email = $1", [
         username,
@@ -125,6 +133,52 @@ passport.use(
     }
   })
 );
+
+passport.use(
+  "google",
+  new GoogleStrategy(
+    {
+      clientID: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_SECRET,
+      callbackURL: process.env.GOOGLE_CALLBACK_URI,
+    },
+    async function (accessToken, refreshToken, profile, cb) {
+      console.log({ profile });
+      try {
+        const response = await db.query(
+          `SELECT * FROM users WHERE email = $1`,
+          [profile.emails[0].value]
+        );
+        if (response.rows.length === 0) {
+          const newUser = await db.query(
+            `INSERT INTO users (email,password) VALUES($1, $2)`,
+            [profile.emails[0].value, "google_password"]
+          );
+          cb(null, newUser.rows[0]);
+        } else {
+          cb(null, response.rows[0]);
+        }
+      } catch (error) {
+        cb(error);
+      }
+    }
+  )
+);
+
+app.get(
+  "/auth/google",
+  passport.authenticate("google", { scope: ["profile", "email"] })
+);
+
+app.get(
+  "/auth/google/callback",
+  passport.authenticate("google", {
+    successRedirect: "/secrets",
+    failureRedirect: "/login",
+  })
+);
+
+// Fix URI mismatch error on sign in with google
 
 passport.serializeUser((user, cb) => {
   cb(null, user);
