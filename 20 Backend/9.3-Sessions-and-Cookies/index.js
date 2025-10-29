@@ -143,7 +143,6 @@ passport.use(
       callbackURL: process.env.GOOGLE_CALLBACK_URI,
     },
     async function (accessToken, refreshToken, profile, cb) {
-      console.log({ profile });
       try {
         const response = await db.query(
           `SELECT * FROM users WHERE email = $1`,
@@ -177,8 +176,6 @@ app.get(
     failureRedirect: "/login",
   })
 );
-
-// Fix URI mismatch error on sign in with google
 
 passport.serializeUser((user, cb) => {
   cb(null, user);
